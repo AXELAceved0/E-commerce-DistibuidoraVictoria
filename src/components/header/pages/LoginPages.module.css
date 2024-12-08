@@ -1,8 +1,108 @@
-.container{
+.container {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../../assets/alfareros.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: none;
+    width: 100vw;
+    height: 100vh;
 }
 
-.img{
+.form{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.containerForm {
+    position: relative;
+    background: rgba(225, 225, 225, 0.1);
+    padding: 30px;
+    border-radius: 5%;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.containerForm::after {
+    position: absolute;
+    content: "";
+    background: inherit;
+    filter: blur(10px);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+input,
+button {
+    position: relative;
+    /* Asegura que estén sobre el pseudo-elemento */
+    z-index: 2;
+    /* Eleva inputs y botones sobre el pseudo-elemento */
+}
+
+
+.containerTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.containerTitle h1 {
+    color: var(--primary-color);
+    font-size: 50px;
+}
+
+.containerLogin {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    margin: 50px;
+}
+
+.containerLogin label {
+    background-color: gray;
+    border-radius: 50px;
+    padding: 15px;
+}
+
+.containerLogin label i {
+    background: transparent;
+    color: var(--primary-color);
+    margin: 9px;
+    font-size: 25px;
+}
+
+.containerLogin label i,
+input {
+    background: transparent;
+    border: none;
+    font-size: larger;
+    cursor: pointer;
+    ;
+}
+
+.containerLogin label i,
+input::placeholder {
+    color: var(--primary-color);
+}
+
+.form button{
+    border-radius: 7px;
+    padding: 2%;
+    border: none;
+    background: orange;
+    color: gray;
     width: 50%;
-    height: 100vh;
+    font-size: 20px;
 }
